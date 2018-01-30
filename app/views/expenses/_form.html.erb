@@ -36,6 +36,11 @@
     <%= form.text_field :status, id: :expense_status %>
   </div>
 
+  <div class="field">
+    <%= form.label :receipt %>
+    <%= form.file_field :receipt %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
