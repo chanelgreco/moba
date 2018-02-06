@@ -27,6 +27,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :debtor %>
+    <%= form.collection_select :debtor_id, Debtor.all, :id, :name %>
+  </div>
+
+  <div class="field">
     <%= form.label :expense_type %>
     <%= form.text_field :type, id: :expense_type %>
   </div>
