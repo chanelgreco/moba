@@ -27,13 +27,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :debtor %>
+    <%= form.label :debtor_id %>
     <%= form.collection_select :debtor_id, Debtor.all, :id, :name %>
   </div>
 
   <div class="field">
     <%= form.label :expense_type %>
-    <%= form.text_field :type, id: :expense_type %>
+    <%= form.text_field :expense_type, id: :expense_type %>
   </div>
 
   <div class="field">
