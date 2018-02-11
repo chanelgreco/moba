@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  contact: MyString
-  email: MyString
+work:
+  name: Company Ltd
+  contact: Miss Moneypenny
+  email: moneypenny@mi6.co.uk
 
-two:
-  name: MyString
-  contact: MyString
-  email: MyString
+private:
+  name: Chanel
+  contact: Chanel Greco
+  email: myself@chanelgreco.com

@@ -2,7 +2,10 @@ require 'test_helper'
 
 class ExpensesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @expense = expenses(:one)
+    @bus_ride = expenses(:bus)
+    @train_ride = expenses(:train)
+    @work = debtors(:work)
+    @private = debtors(:private)
   end
 
   test "should get index" do
@@ -17,30 +20,32 @@ class ExpensesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create expense" do
     assert_difference('Expense.count') do
-      post expenses_url, params: { expense: { amount: @expense.amount, date: @expense.date, name: @expense.name, status: @expense.status, type: @expense.type } }
+      byebug
+      post expenses_url, params: { expense: { amount: @train_ride.amount, date: @train_ride.date, name: @train_ride.name, status: @train_ride.status, expense_type: @train_ride.expense_type, debtor_id: @work.debtor_id } }
     end
 
     assert_redirected_to expense_url(Expense.last)
   end
 
   test "should show expense" do
-    get expense_url(@expense)
+    get expense_url(@train_ride)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_expense_url(@expense)
+    get edit_expense_url(@train_ride)
     assert_response :success
   end
 
   test "should update expense" do
-    patch expense_url(@expense), params: { expense: { amount: @expense.amount, date: @expense.date, name: @expense.name, status: @expense.status, type: @expense.type } }
-    assert_redirected_to expense_url(@expense)
+    patch expense_url(@train_ride), params: { expense: { amount: @train_ride.amount, date: @train_ride.date, name: @train_ride.name, status: @train_ride.status, expense_type: @train_ride.expense_type, debtor_id: @work.debtor_id } }
+    byebug
+    assert_redirected_to expense_url(@train_ride)
   end
 
   test "should destroy expense" do
     assert_difference('Expense.count', -1) do
-      delete expense_url(@expense)
+      delete expense_url(@train_ride)
     end
 
     assert_redirected_to expenses_url
