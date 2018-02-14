@@ -69,6 +69,6 @@ class ExpensesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def expense_params
-      params.require(:expense).permit(:date, :amount, :name, :expense_type, :status, debtor_attributes: [ :debtor_id ])
+      params.require(:expense).permit(:date, :amount, :name, :expense_type, :status, :debtor_id)
     end
 end
