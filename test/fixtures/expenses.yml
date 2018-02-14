@@ -6,7 +6,7 @@ bus:
   name: Bus ride
   expense_type: private
   status: open
-  debtor_id: 2
+  debtor: private
 
 train:
   date: 2018-01-21
@@ -14,4 +14,4 @@ train:
   name: Train ride
   expense_type: business
   status: Pending
-  debtor_id: 1
+  debtor: work

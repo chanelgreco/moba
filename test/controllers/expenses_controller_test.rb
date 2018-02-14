@@ -20,8 +20,7 @@ class ExpensesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create expense" do
     assert_difference('Expense.count') do
-      byebug
-      post expenses_url, params: { expense: { amount: @train_ride.amount, date: @train_ride.date, name: @train_ride.name, status: @train_ride.status, expense_type: @train_ride.expense_type, debtor_id: @work.debtor_id } }
+      post expenses_url, params: { expense: { amount: @train_ride.amount, date: @train_ride.date, name: @train_ride.name, status: @train_ride.status, expense_type: @train_ride.expense_type, debtor_id: @work.id } }
     end
 
     assert_redirected_to expense_url(Expense.last)
@@ -38,8 +37,7 @@ class ExpensesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update expense" do
-    patch expense_url(@train_ride), params: { expense: { amount: @train_ride.amount, date: @train_ride.date, name: @train_ride.name, status: @train_ride.status, expense_type: @train_ride.expense_type, debtor_id: @work.debtor_id } }
-    byebug
+    patch expense_url(@train_ride), params: { expense: { amount: @train_ride.amount, date: @train_ride.date, name: @train_ride.name, status: @train_ride.status, expense_type: @train_ride.expense_type, debtor_id: @work.id } }
     assert_redirected_to expense_url(@train_ride)
   end
 
