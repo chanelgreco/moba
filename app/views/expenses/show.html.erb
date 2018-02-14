@@ -25,5 +25,10 @@
   <%= @expense.status %>
 </p>
 
+<p>
+  <strong>Receipt:</strong>
+  <%= @expense.receipt %>
+</p>
+
 <%= link_to 'Edit', edit_expense_path(@expense) %> |
 <%= link_to 'Back', expenses_path %>
